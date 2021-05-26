@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@using Directorio.Data
+
+<div class="text-center">
+    <h1 class="display-4">Directorio Telefónicos</h1>
+</div>
+
+<table class="table">
+
+    <tr><td>Número</td><td>Nombre</td><td>Apellido</td><td>Teléfono</td><td>ID Departamento</td></tr>
+
+    @{int i=1;}
+    @foreach (Persona persona in Model.Personas)
+    {
+        <tr>
+            <td>@i</td>
+            <td>@persona.Nombre</td>
+            <td>@persona.Apellido</td>
+            <td>@persona.Telefono</td>
+            <td>@persona.IdUnidad</td>
+        </tr>
+        i++;
+    }
+</table>
